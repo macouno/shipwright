@@ -1,0 +1,491 @@
+/* -- MAIN -- */
+
+body, html{
+	margin: 0px;
+	padding: 0px;
+	background-color: #000;
+	text-align:center;
+}
+
+body{
+	text-align: center;
+	overflow: hidden;
+}
+
+#canvas{
+	margin: 0px auto;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+#container{
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+}
+
+#footer{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	text-align: left;
+	padding: 10px;
+}
+
+#support{
+	margin-left: 20px;
+	font-size: 120%;
+}
+
+#fb-buttons{
+	position: absolute;
+	top: 40px;
+	right: 10px;
+	width: 118px;
+}
+
+form{
+	padding: 5px 10px;
+	margin: 0px;
+	display: block;
+}
+
+#mask{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: #000;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	filter: alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+}
+
+#donations{
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+	#downloading{
+		display: none;
+		width: 280px;
+		position: absolute;
+		margin-left: -140px;
+		margin-top: -220px;
+		padding: 20px 0px;
+		font-size: 1.6em;
+	}
+
+	#donations form{
+		width: 240px;
+		height: 120px;
+		position: absolute;
+		margin-left: -140px;
+		margin-top: -120px;
+		background-color: #383838;
+		padding: 20px;
+		border: #EEE solid 1px;
+		-moz-border-radius: 4px;
+		-khtml-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		font-size: 1.4em;
+	}
+	
+	#donations p{
+		margin: 0px;
+		padding: 0px 0px 20px 0px;
+		font-weight: bold;
+	}
+	
+	#clickhere{
+		position: absolute;
+		margin-top: 120px;
+		color :#FF6600;
+	}
+
+
+.claro{
+	clear: both;
+}
+
+/* -- FONTS -- */
+
+body,
+td,
+form,
+a{
+	font-family: Arial, Helvetica;
+	font-size: x-small;
+	color: #F0F0F0;
+	font-weight: normal;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1, h1 a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	display: block;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+
+h1{
+	padding: 6px;
+}
+
+
+#header{
+	height: 28px;
+	min-width: 640px;
+}
+	
+#header, #header a{
+	color: #FFF;
+}
+
+	#header a strong,
+	#header .active a{
+		color :#FF6600;
+	}
+
+	#header a:hover{
+		color: #FF6600;
+	}
+	
+	#header a:hover strong{
+		color: #FFF;
+	}
+
+#settings{
+	font-size: 0.9em;
+}
+	#settings .setdesc{
+		text-transform: uppercase;
+	}
+
+#footer,
+#footer a{
+	color: #FFF;
+}
+
+	#footer a{
+		color: #FF6600;
+	}
+
+	#footer a:hover{
+		color: #FFF;
+	}
+	
+#message,
+#message a{
+	font-size: medium;
+	font-weight: bold;
+}
+
+.error,
+#message a{
+	color: #FF6600 !important;
+}
+
+#download a{
+	color: #5560A8;
+}
+
+#download a:hover{
+	color: #FFF;
+}
+
+/* -- ELEMENTS -- */
+
+#header{
+	background: url(../img/bg_header.gif) center center repeat-x #2D2D2D;
+	text-align: center;
+}
+
+	#menu{
+		margin: 0px auto;
+		width: 480px;
+	}
+	
+	#menu li{
+		float: left;
+	}
+
+	#colorpicker{
+		float: right;
+		width: 66px;
+		margin-right: 22px;
+	}
+
+		#colorpicker ul,
+		#colorpicker li,	
+		#menu ul,
+		#menu li{
+			display: block;
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		
+		#colorpicker li{
+			float: left;
+		}
+		
+		/*
+		#colorpicker .active{
+			display: block;
+		}
+		
+		#colorpicker ul:hover li{
+			display: block;
+		}
+		
+		
+		#colorpicker ul{
+			position: absolute;
+			background-color: #2D2D2D;
+		}
+		*/
+		
+		#menu .active a{
+			background-color: #000;
+		}
+		
+		#colorpicker a,
+		#menu a{
+			display: block;
+			width: 60px;
+			padding: 7px 0px 6px 0px;
+			text-align: left;
+			font-size: 1.2em;
+			text-align: center;
+		}
+		
+		#colorpicker a{
+			padding: 0px;
+			width: 22px;
+			height: 28px;
+			background: url(../img/colorpicker.gif) left top no-repeat;
+		}
+		
+		#colorpicker .active .white,
+		#colorpicker .white:hover{
+			background-position: 0px -28px;
+		}
+		
+		#colorpicker .blue{
+			background-position: -22px 0px;
+		}
+		
+		#colorpicker .active .blue,
+		#colorpicker .blue:hover{
+			background-position: -22px -28px;
+		}
+		
+		#colorpicker .black{
+			background-position: -44px 0px;
+		}
+		
+		#colorpicker .active .black,
+		#colorpicker .black:hover{
+			background-position: -44px -28px;
+		}
+		
+	#shipForm{
+		display: block;
+		margin: 0px auto;
+		padding: 0px;
+		background: url(../img/buildit.gif) left top no-repeat;
+		width: 237px;
+		height: 28px;
+	}
+	
+	#shipForm:hover{
+		background-position: left -29px;
+	}
+	
+		#shipForm #entry{
+			padding-top: 4px;
+		}
+	
+		#shipForm input,
+		#shipForm a{
+			float: left;
+		}
+		
+		#shipForm #name{
+			font-size: 12px;
+			padding: 0px;
+			margin: 3px 0px 0px 3px;
+			line-height: 12px;
+			border: #FDDDAC solid 0px !important;
+			background-color: #FDDDAC;
+			width: 150px;
+			text-align: center;
+		}
+		
+		#shipForm:hover #name{
+			background-color: #FEEED6;
+		}
+		
+		#shipForm a{
+			display: block;
+			width: 70px;
+			height: 20px;
+			margin-left: 14px;
+			background: url(../img/buildit.gif) -167px -4px no-repeat;
+		}
+		
+		#shipForm a:hover{
+			background-position: -167px -33px;
+		}
+		
+		#nameSubmit{
+			padding: 2px 3px;
+			margin-left: 10px;
+			background-color: #CCC;
+		}
+		
+#randForm,
+#buyDesc,
+#uploadDisabled{
+	display: none;
+}
+
+#buyDesc{
+	position: absolute;
+	margin-top: 44px;
+	padding: 10px;
+	border: #111 solid 1px;
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #111;
+	color: #FFF;
+	margin-left: -138px;
+	font-size: 11px;
+	text-align: left;
+}
+
+	#buyDesc h3{
+		padding: 0px 0px 5px 0px;
+		margin: 0px;
+	}
+	
+	#buyDesc span{
+		color: #FF6600;
+	}
+	
+	#buyDesc ul{
+		margin: 0px 0px 0px 14px;
+		padding: 0px;
+	}
+	
+#upload:hover #buyDesc{
+	display: block;
+}
+
+#nameForm{
+	width: 100%;
+	position: absolute;
+}
+
+#alerts{
+	position: absolute;
+	width: 480px;
+	text-align: center;
+	margin-left: -240px;
+}
+	
+	.loading{
+		background: url(../img/loading.gif) left center no-repeat;
+		padding-left: 26px;
+		margin-left: -26px;
+	}
+
+
+#dynamics{
+	position: absolute;
+	top: 28px;
+	left: 50%;
+	text-align: center;
+}
+
+#download{
+	display: none;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	padding: 10px;
+}
+
+#upload{
+	display: none;
+}
+
+#download input,
+#download textarea,
+#upload input,
+#upload textarea{
+	display: none;
+}
+
+	#upload a,
+	#downloadbutton{
+		display: block;
+		/* background-color: #FFF; */
+		background: url(../img/bg_header.gif) center center repeat-x #2D2D2D;
+		text-align: center;
+		color: #FFF;
+		padding: 6px;
+		border: #333 solid 1px;
+		-moz-border-radius: 4px;
+		-khtml-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		text-decoration: none;
+		font-size: medium;
+		font-weight: bold;
+		width: 223px;
+		margin-left: -129px;
+	}
+	
+	#downloadbutton{
+		width: 100px;
+		font-size: 1em;
+	}
+	
+	#downloadify{
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	#upload a span{
+		color: #FF6600;
+	}
+
+	#upload a:hover{
+		color: #FF6600;
+		background-position: center bottom;
+		border-color: #000;
+	}
+	
+	#upload a:hover span{
+		color: #FFF;
+	}

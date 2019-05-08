@@ -1,11 +1,12 @@
 <?php
+
+define('BASE', '');
+
 define('ROOT', dirname(__FILE__));
 
 define('PART', 'ship');
 $linked = false;
 $tempString = 'Your name here';
-
-require_once(ROOT.'/config/config.inc.php');
 
 // Make a random string
 function makeRandomString($length){
